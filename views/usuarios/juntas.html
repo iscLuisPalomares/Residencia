@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+	<h3>Juntas a las que me invitaron </h3>
+	<br>
+	<br>
+	<div class="col-xs-12 table-responsive" >
+		
+
+		<table class="table table-striped table-bordered">
+			<tr>
+				<th>ID</th>
+				<th>Fecha</th>
+				<th>Tema</th>
+				<th>Ver acuerdos</th>
+			</tr>
+			<tr ng-repeat="x in juntas">
+				<td>{{ x.fsid }}</td>
+				<td>{{ x.fsfecha }}</td>
+				<td>{{ x.fstema }}</td>
+				<td><button class="form-control" ng-click="veracuerdos(x.fsid)">Detalle</button></td>
+			</tr>
+		</table>
+
+	</div>
+	<div class="col-xs-12">
+				<div ng-hide="islogged == '0'">
+					<h3>Acuerdos por ver</h3>
+					<table class="table table-striped table-bordered">
+						<tr>
+							<th>ID</th>
+							<th>Titulo</th>
+							<th>Tematica</th>
+						</tr>
+						<tr ng-repeat="x in acuerdos">
+							<td>{{ x.fsjuntaid }}</td>
+							<td>{{ x.fsasunto }}</td>
+							<td>{{ x.fsacuerdo }}</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+
+
+</div>

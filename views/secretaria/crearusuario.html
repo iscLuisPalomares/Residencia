@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+		<form ng-hide="islogged == '0'">
+			<label> Nombre de usuario </label>
+			<input class="form-control" ng-model="createuser_username" placeholder="username">
+			<label> Contrasena </label>
+			<input class="form-control" type="password" ng-model="createuser_password" placeholder="contrasena">
+			<label> Correo </label>
+			<input class="form-control" ng-model="createuser_email" placeholder="email">
+			<button class="form-control" ng-click="paginacrearusuario_crearusuario(createuser_username, createuser_password, createuser_email)">Crear Usuario</button>
+		</form>
+
+	</div>	
+
+</div>
+

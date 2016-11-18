@@ -1,0 +1,58 @@
+<div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>Ver y Agregar Acuerdos a las Juntas</h3>
+				<br>
+				<br>
+				<div ng-hide="islogged == '0'" style="">
+					<table class="table table-striped table-bordered">
+						<tr>
+							<th>ID</th>
+							<th>Fecha</th>
+							<th>Tema</th>
+							<th>Ver acuerdos</th>
+						</tr>
+						<tr ng-repeat="x in juntas">
+							<td>{{ x.fsid }}</td>
+							<td>{{ x.fsfecha }}</td>
+							<td>{{ x.fstema }}</td>
+							<td><button class="form-control" ng-click="paginaacuerdos_mostrardetalle(x.fsid)">Detalle</button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div ng-hide="islogged == '0'">
+
+					<h3>Acuerdos por ver</h3>
+					<table class="table table-striped table-bordered">
+						<tr>
+							<th>ID</th>
+							<th>Titulo</th>
+							<th>Tematica</th>
+						</tr>
+						<tr ng-repeat="x in acuerdos">
+							<td>{{ x.fsjuntaid }}</td>
+							<td>{{ x.fsasunto }}</td>
+							<td>{{ x.fsacuerdo }}</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<form ng-hide="islogged == '0'">
+					<label> ID de la Junta </label>
+					<input class="form-control" ng-model="acuerdosid_junta" placeholder="ID" disabled>
+					<label> Titulo </label>
+					<input class="form-control" ng-model="acuerdostitulo" placeholder="Titulo">
+					<label> Tematica </label>
+					<input class="form-control" ng-model="acuerdostematica" placeholder="Tematica">
+					<button class="form-control" ng-click="paginaacuerdos_adjuntaracuerdo(acuerdosid_junta, acuerdostitulo, acuerdostematica)">Adjuntar acuerdo a la junta</button>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</div>

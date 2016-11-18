@@ -1,0 +1,17 @@
+<div>
+
+<form>
+<div class="col-lg-4 col-md-6 col-sm-4" ng-hide="islogged == '1'">
+	<label>Usuario</label>
+	<input type="text" class="form-control" placeholder="ingrese su usuario" id="username" name= "username" ng-model="muser">
+	<label>Contrasena</label>
+	<input type="password" class="form-control" placeholder="ingrese su contrasena" id="password" name="password" ng-model="mpass">
+	<button type="submit"class="form-control" ng-click="login()">Iniciar sesion</button>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-4" ng-hide = "islogged == '0'">
+<button type="submit" class="form-control" ng-click="logout()">cerrar sesion</button>
+</div>
+</form>
+
+
+</div>
